@@ -7,6 +7,12 @@ TagManager:
   - Blue Pool
   - White Pool
   - Red Pool
+  - Magenta Pool
+  - Cyan Pool
+  - Yellow Pool
+  - Green Pool
+  - Color Pool
+  - Gate Trigger
   layers:
   - Default
   - TransparentFX
