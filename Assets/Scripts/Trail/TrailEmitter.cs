@@ -19,6 +19,7 @@ namespace Trails
         public Material material;
         public int roughness = 0;
         public bool softSourceEnd = false;
+        public Transform Ptr;
 
         private Trail lastTrail;
 
@@ -45,6 +46,13 @@ namespace Trails
                     trails.Remove(t);
                 t = n;
             } while (n != null);
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                //material.color = Color.black;
+                material.color = Ptr.GetComponent<Material>().color;
+            }
+
+
         }
 
         /// <summary>
@@ -60,8 +68,8 @@ namespace Trails
                 // lastTrail = trails.Last.Value;
                 StartCoroutine("EndTrail", trails.Last.Value);
             }
-
-            trails.AddLast(new Trail(transform, material, decayTime, roughness, softSourceEnd, width));
+            var mat = new Material(material);
+            trails.AddLast(new Trail(transform, mat, decayTime, roughness, softSourceEnd, width));
         }
 
         IEnumerator EndTrail(Trail trail)
