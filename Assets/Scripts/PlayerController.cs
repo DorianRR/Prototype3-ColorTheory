@@ -11,11 +11,23 @@ public class PlayerController : MonoBehaviour {
     public Material[] materials;
     public Text output;
    
+<<<<<<< HEAD
     public Renderer rend;
     public GameObject[] ColorPool;
+=======
+    public GameObject[] ColorPool;
+    public GameObject doors;
+>>>>>>> DevYitong
 
+    private DoorController doorController;
     private Rigidbody rb;
+<<<<<<< HEAD
     private Dictionary<string, int> colorCollected = new Dictionary<string, int>();
+=======
+    public Renderer rend;
+    private Dictionary<string, int> colorCollected = new Dictionary<string, int>();
+    public bool isWhite = true;
+>>>>>>> DevYitong
     void Start()
     {
         output.text = "";
@@ -25,12 +37,20 @@ public class PlayerController : MonoBehaviour {
         colorCollected.Add("blue", 0);
         colorCollected.Add("red", 0);
         colorCollected.Add("yellow", 0);
+<<<<<<< HEAD
+=======
+        doorController = doors.GetComponent<DoorController>();
+>>>>>>> DevYitong
     }
 
     void FixedUpdate()
     {
+
+        Vector3 currentPo = GetComponent<Transform>().position;
+
         float moveHoriz = Input.GetAxis("Horizontal");
         float moveVert = Input.GetAxis("Vertical");
+<<<<<<< HEAD
         
         Vector3 movement = new Vector3(moveHoriz, 0, moveVert);
 
@@ -38,6 +58,29 @@ public class PlayerController : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
+=======
+        float moveUp = 0;
+        if (Input.GetButton("Jump"))
+        {
+            moveUp = 30;
+        }
+        else
+        {
+            moveUp = 0;
+        }
+
+        Vector3 movement = new Vector3(moveHoriz, moveUp, moveVert);
+        if (this.transform.position.y < 0.51)
+        {
+            //rb.transform.position = currentPo + movement*speed;
+            rb.AddForce(movement * speed);
+        }
+        movement = new Vector3(0,0,0);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        isWhite = false;
+>>>>>>> DevYitong
         if (other.gameObject.CompareTag("White Pool"))
         {
             rend.sharedMaterial = materials[0];
@@ -48,6 +91,10 @@ public class PlayerController : MonoBehaviour {
             colorCollected["blue"] = 0;
             colorCollected["red"] = 0;
             colorCollected["yellow"] = 0;
+<<<<<<< HEAD
+=======
+            isWhite = true;
+>>>>>>> DevYitong
         }
         else if (other.gameObject.CompareTag("Blue Pool"))
         {
@@ -131,6 +178,10 @@ public class PlayerController : MonoBehaviour {
             if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
             {
                 //rend.sharedMaterial = materials[(int)color.green];
+<<<<<<< HEAD
+=======
+                doorController.doorOpening = true;
+>>>>>>> DevYitong
                 output.text = "Win";
             }
             else
