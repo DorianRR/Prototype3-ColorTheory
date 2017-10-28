@@ -38,7 +38,7 @@ public class TrailEmitter : MonoBehaviour {
             lr.useWorldSpace = true;
             lr.alignment = LineAlignment.Local;
             lr.positionCount = 2;
-            //terial = GetComponent<Material>().color;
+            //material = GetComponent<Material>().color;
             lr.sharedMaterial = playerController.rend.sharedMaterial;
        
             lr.startWidth = 0.2f;

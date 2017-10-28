@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
+
+        Vector3 currentPo = GetComponent<Transform>().position;
+
         float moveHoriz = Input.GetAxis("Horizontal");
         float moveVert = Input.GetAxis("Vertical");
         float moveUp = 0;
@@ -48,8 +51,10 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(moveHoriz, moveUp, moveVert);
         if (this.transform.position.y < 0.51)
         {
+            //rb.transform.position = currentPo + movement*speed;
             rb.AddForce(movement * speed);
         }
+        movement = new Vector3(0,0,0);
     }
     private void OnTriggerEnter(Collider other)
     {
