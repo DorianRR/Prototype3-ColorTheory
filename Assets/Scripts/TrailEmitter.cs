@@ -6,6 +6,7 @@ public class TrailEmitter : MonoBehaviour {
     private Vector3 currentPo;
     private Vector3 prePo;
     private PlayerController playerController;
+    private bool lineOn = true;
     // Use this for initialization
     void Start () {
         prePo = GetComponent<Transform>().position;
@@ -15,7 +16,18 @@ public class TrailEmitter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         currentPo = GetComponent<Transform>().position;
-        if(currentPo.y <= 0.5 && prePo.y <= 0.5 && !playerController.isWhite)
+
+        if (Input.GetKeyDown(KeyCode.Q) && lineOn == true)
+        {
+            lineOn = false; 
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Q) && lineOn == false)
+        {
+            lineOn = true;
+        }
+
+        if (currentPo.y <= 0.5 && prePo.y <= 0.5 && !playerController.isWhite && lineOn)
         {
             GameObject LineHolder = new GameObject("LineHolder");
             LineHolder.transform.position = new Vector3(0, 0, 0);
