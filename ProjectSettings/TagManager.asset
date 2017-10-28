@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Blue Pool
+  - White Pool
+  - Red Pool
+  - Magenta Pool
+  - Cyan Pool
+  - Yellow Pool
+  - Green Pool
+  - Color Pool
+  - Gate Trigger
   layers:
   - Default
   - TransparentFX
