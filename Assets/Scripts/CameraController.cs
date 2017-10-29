@@ -16,16 +16,11 @@ public class CameraController : MonoBehaviour
         offset = transform.position - player.transform.position;
     }
 
-    void LateUpdate()
+    void Update()
     {
 
-        transform.position = Vector3.Lerp(transform.position, target.position, 5.0f * Time.deltaTime) + offset; 
+        transform.position = Vector3.Lerp(transform.position, target.position + offset, 0.5f * Time.deltaTime); 
 
-        /*
-        transform.position = player.transform.position + offset; 
-	
-    
-        transform.Rotate((transform.up * Input.GetAxisRaw("Mouse X")).normalized * Time.deltaTime);
-        */
+  
     }
 }
