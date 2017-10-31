@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     enum color { white, blue, red, yellow, orange, purple, green, brown};
+    public Transform camTransform;
     public float speed;
     public Material[] materials;
     public Text output;
@@ -33,12 +34,13 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-
-        Vector3 currentPo = GetComponent<Transform>().position;
-
         float moveHoriz = Input.GetAxis("Horizontal");
         float moveVert = Input.GetAxis("Vertical");
         float moveUp = 0;
+        Vector3 movement = new Vector3(moveHoriz, 0, moveVert);
+        //movement = camTransform.TransformDirection(movement);
+        Quaternion rot = Quaternion.Euler(0, camTransform.rotation.eulerAngles.y, 0);
+        movement = rot * movement;
         if (Input.GetButton("Jump"))
         {
             moveUp = 30;
@@ -47,18 +49,16 @@ public class PlayerController : MonoBehaviour {
         {
             moveUp = 0;
         }
-
-        Vector3 movement = new Vector3(moveHoriz, moveUp, moveVert);
+        movement.y = moveUp;
+       
         if (this.transform.position.y < 0.51)
         {
-            //rb.transform.position = currentPo + movement*speed;
             rb.AddForce(movement * speed);
         }
-        movement = new Vector3(0,0,0);
     }
     private void OnTriggerEnter(Collider other)
     {
-        isWhite = false;
+        
         if (other.gameObject.CompareTag("White Pool"))
         {
             rend.sharedMaterial = materials[0];
@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("Blue Pool"))
         {
+            isWhite = false;
             colorCollected["blue"]++;
             if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 0){
                 rend.sharedMaterial = materials[(int)color.blue];
@@ -99,6 +100,7 @@ public class PlayerController : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("Red Pool"))
         {
+            isWhite = false;
             colorCollected["red"]++;
             if (colorCollected["blue"] == 0 && colorCollected["red"] == 1 && colorCollected["yellow"] == 0)
             {
@@ -125,6 +127,7 @@ public class PlayerController : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("Yellow Pool"))
         {
+            isWhite = false;
             colorCollected["yellow"]++;
             if (colorCollected["blue"] == 0 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
             {

@@ -6,7 +6,7 @@ public class TrailEmitter : MonoBehaviour {
     private Vector3 currentPo;
     private Vector3 prePo;
     private PlayerController playerController;
-    private bool lineOn = true;
+    public Material colorMat;
     // Use this for initialization
     void Start () {
         prePo = GetComponent<Transform>().position;
@@ -16,31 +16,22 @@ public class TrailEmitter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         currentPo = GetComponent<Transform>().position;
-
-        if (Input.GetKeyDown(KeyCode.Q) && lineOn == true)
-        {
-            lineOn = false; 
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Q) && lineOn == false)
-        {
-            lineOn = true;
-        }
-
-        if (currentPo.y <= 0.5 && prePo.y <= 0.5 && !playerController.isWhite && lineOn)
+        if(currentPo.y <= 0.52 && prePo.y <= 0.52 && !playerController.isWhite)
         {
             GameObject LineHolder = new GameObject("LineHolder");
             LineHolder.transform.position = new Vector3(0, 0, 0);
-            //Vector3 ro = GetComponent<Transform>().rotation.eulerAngles;
             LineHolder.transform.rotation = Quaternion.Euler(90, 0, 0);
 
             LineRenderer lr = LineHolder.AddComponent<LineRenderer>();
             lr.useWorldSpace = true;
             lr.alignment = LineAlignment.Local;
             lr.positionCount = 2;
-            //material = GetComponent<Material>().color;
-            lr.sharedMaterial = playerController.rend.sharedMaterial;
-       
+
+            //lr.sharedMaterial = playerController.rend.sharedMaterial;
+            var curColor = playerController.rend.material.color;
+            lr.material = new Material(colorMat);
+            lr.material.color = curColor;
+
             lr.startWidth = 0.2f;
             lr.endWidth = 0.2f;
             lr.SetPosition(0, new Vector3(prePo.x, 0.01f, prePo.z));
