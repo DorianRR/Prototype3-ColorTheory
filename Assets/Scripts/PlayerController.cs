@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour {
     public Renderer rend;
     private Dictionary<string, int> colorCollected = new Dictionary<string, int>();
     public bool isWhite = true;
+    public Transform camTransform;
+
     void Start()
     {
         output.text = "";
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour {
         float moveHoriz = Input.GetAxis("Horizontal");
         float moveVert = Input.GetAxis("Vertical");
         float moveUp = 0;
+
         if (Input.GetButton("Jump"))
         {
             moveUp = 30;
@@ -49,6 +52,8 @@ public class PlayerController : MonoBehaviour {
         }
 
         Vector3 movement = new Vector3(moveHoriz, moveUp, moveVert);
+        Quaternion rot = Quaternion.Euler(0, camTransform.rotation.eulerAngles.y, 0);
+        movement = rot * movement;
         if (this.transform.position.y < 0.51)
         {
             //rb.transform.position = currentPo + movement*speed;
