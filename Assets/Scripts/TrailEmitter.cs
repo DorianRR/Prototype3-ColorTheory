@@ -7,10 +7,12 @@ public class TrailEmitter : MonoBehaviour {
     private Vector3 prePo;
     private PlayerController playerController;
     public Material colorMat;
+    //private float lineHeight;
     // Use this for initialization
     void Start () {
         prePo = GetComponent<Transform>().position;
         playerController = GetComponent<PlayerController>();
+        //lineHeight = 0.001f;
     }
 	
 	// Update is called once per frame
@@ -36,6 +38,8 @@ public class TrailEmitter : MonoBehaviour {
             lr.endWidth = 0.2f;
             lr.SetPosition(0, new Vector3(prePo.x, 0.01f, prePo.z));
             lr.SetPosition(1, new Vector3(currentPo.x, 0.01f, currentPo.z));
+            //lineHeight = lineHeight + 0.001f;
+            //if(lineHeight == 0.1f) { lineHeight = 0.001f; }
             GameObject.Destroy(LineHolder, 40f);
         }
         

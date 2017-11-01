@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
         movement = rot * movement;
         if (Input.GetButton("Jump"))
         {
-            moveUp = 30;
+            moveUp = 5;
         }
         else
         {
@@ -53,8 +53,14 @@ public class PlayerController : MonoBehaviour {
        
         if (this.transform.position.y < 0.51)
         {
+            rb.drag = 10;
             rb.AddForce(movement * speed);
         }
+        else
+        {
+            rb.drag = 0;
+        }
+        
     }
     private void OnTriggerEnter(Collider other)
     {
