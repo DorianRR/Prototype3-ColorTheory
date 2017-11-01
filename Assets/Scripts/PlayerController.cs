@@ -59,16 +59,22 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(moveHoriz, moveUp, moveVert);
         Quaternion rot = Quaternion.Euler(0, camTransform.rotation.eulerAngles.y, 0);
         movement = rot * movement;
-        //if (this.transform.position.y < ballDiameter/.49)
-        //{
-            //rb.transform.position = currentPo + movement*speed;
         rb.AddForce(movement * speed);
+        /*
         if (this.transform.position.y < ballDiameter/ 2){
             onGround = true;
         }
-        //}
+        */
         movement = new Vector3(0,0,0);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Floor")
+        {
+            onGround = true;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         isWhite = false;

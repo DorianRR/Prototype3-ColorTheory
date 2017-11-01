@@ -11495,7 +11495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee28ce4874953494ebed00da8d97572a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   materials:
   - {fileID: 2100000, guid: a6ea3841e275dd74c926efbf8b34d6f8, type: 2}
   - {fileID: 2100000, guid: 5c01c6f3a52291e41ae8ef0b2a1f8ab0, type: 2}
@@ -11515,7 +11515,7 @@ MonoBehaviour:
   isWhite: 1
   camTransform: {fileID: 760828022}
   ballDiameter: 2
-  jumpScale: 10
+  jumpScale: 20
 --- !u!114 &1951723193
 MonoBehaviour:
   m_ObjectHideFlags: 0
