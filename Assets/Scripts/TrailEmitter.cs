@@ -7,8 +7,10 @@ public class TrailEmitter : MonoBehaviour {
     private Vector3 prePo;
     private PlayerController playerController;
     private bool lineOn = true;
-    public float currentPos;
-    public float previousPos;
+    private float currentPos;
+    private float previousPos;
+    private bool onGround = true;
+
     // Use this for initialization
     void Start () {
         prePo = GetComponent<Transform>().position;
@@ -29,7 +31,7 @@ public class TrailEmitter : MonoBehaviour {
             lineOn = true;
         }
         //
-        if (currentPo.y <= currentPos && prePo.y <= previousPos && currentPo.y > .5 && prePo.y > .5 &&!playerController.isWhite && lineOn)
+        if (onGround && !playerController.isWhite && lineOn)
         {
             GameObject LineHolder = new GameObject("LineHolder");
             LineHolder.transform.position = new Vector3(0, 0, 0);
@@ -45,13 +47,24 @@ public class TrailEmitter : MonoBehaviour {
        
             lr.startWidth = 0.2f;
             lr.endWidth = 0.2f;
-            lr.SetPosition(0, new Vector3(prePo.x, 0.01f, prePo.z));
-            lr.SetPosition(1, new Vector3(currentPo.x, 0.01f, currentPo.z));
+            lr.SetPosition(0, new Vector3(prePo.x, prePo.y - 0.99f, prePo.z));
+            lr.SetPosition(1, new Vector3(currentPo.x, currentPo.y - 0.99f, currentPo.z));
             GameObject.Destroy(LineHolder, 40f);
         }
-        
+        if (currentPo.y > prePo.y)
+        {
+            onGround = false;
+        }
         prePo = currentPo;
+        
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Floor")
+        {
+            onGround = true;
+        }
+    }
 
 }
