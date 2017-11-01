@@ -1,8 +1,14 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 0fda5b3b3149b534dbb072d10f2a32a3
 timeCreated: 1509567551
 licenseType: Free
+=======
+guid: 5a8b31621d240cf49b01b447097797a2
+timeCreated: 1509567424
+licenseType: Pro
+>>>>>>> e289e6b990fa76000522f85ca607c428c4296410
 =======
 guid: 5a8b31621d240cf49b01b447097797a2
 timeCreated: 1509567424
@@ -19,6 +25,11 @@ TextureImporter:
     fadeOut: 0
     borderMipMap: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+>>>>>>> e289e6b990fa76000522f85ca607c428c4296410
 =======
     mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
@@ -39,11 +50,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
 <<<<<<< HEAD
+<<<<<<< HEAD
     filterMode: -1
     aniso: -1
     mipBias: -1
     wrapMode: -1
 =======
+=======
+>>>>>>> e289e6b990fa76000522f85ca607c428c4296410
     serializedVersion: 2
     filterMode: -1
     aniso: -1
@@ -51,6 +65,9 @@ TextureImporter:
     wrapU: -1
     wrapV: -1
     wrapW: -1
+<<<<<<< HEAD
+>>>>>>> e289e6b990fa76000522f85ca607c428c4296410
+=======
 >>>>>>> e289e6b990fa76000522f85ca607c428c4296410
   nPOTScale: 1
   lightmap: 0
@@ -84,6 +101,10 @@ TextureImporter:
     sprites: []
     outline: []
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    physicsShape: []
+>>>>>>> e289e6b990fa76000522f85ca607c428c4296410
 =======
     physicsShape: []
 >>>>>>> e289e6b990fa76000522f85ca607c428c4296410
