@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: a459fdb2950900e45a9d62907c556ac4
-timeCreated: 1509568601
+guid: 06f2ad9ef99ef6e438a6e1917f453570
+timeCreated: 1509516166
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
     100002: polySurface2590
+    100004: transform1172
     400000: //RootNode
     400002: polySurface2590
+    400004: transform1172
     2300000: polySurface2590
     3300000: polySurface2590
     4300000: polySurface2590
