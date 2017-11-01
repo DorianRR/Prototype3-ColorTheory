@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     public Renderer rend;
     private Dictionary<string, int> colorCollected = new Dictionary<string, int>();
     public bool isWhite = true;
+ 
     void Start()
     {
         output.text = "";
@@ -38,9 +39,34 @@ public class PlayerController : MonoBehaviour {
         float moveVert = Input.GetAxis("Vertical");
         float moveUp = 0;
         Vector3 movement = new Vector3(moveHoriz, 0, moveVert);
-        //movement = camTransform.TransformDirection(movement);
         Quaternion rot = Quaternion.Euler(0, camTransform.rotation.eulerAngles.y, 0);
+        transform.rotation = rot;
         movement = rot * movement;
+        transform.position += movement * speed * Time.deltaTime;
+        if (this.transform.position.y < 0.51)
+        {
+
+            if (Input.GetButton("Jump"))
+            {
+                moveUp =10;
+            }
+            else
+            {
+                moveUp = 0;
+            }
+            Vector3 jmpForece = new Vector3(0, moveUp, 0);
+            rb.AddForce(jmpForece * 40);
+        }
+        
+        /*
+        trueRight = rot * Vector3.right;
+        trueDown = rot * Vector3.back;
+        rb.AddTorque(trueRight*moveVert*speed, ForceMode.Acceleration);
+        rb.AddTorque(trueDown * moveHoriz * speed, ForceMode.Acceleration);
+        */
+
+
+        /*
         if (Input.GetButton("Jump"))
         {
             moveUp = 5;
@@ -60,7 +86,7 @@ public class PlayerController : MonoBehaviour {
         {
             rb.drag = 0;
         }
-        
+        */
     }
     private void OnTriggerEnter(Collider other)
     {

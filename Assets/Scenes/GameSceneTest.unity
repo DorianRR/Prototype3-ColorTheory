@@ -1622,7 +1622,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785164664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 588.5, y: 295.5, z: 0}
+  m_LocalPosition: {x: 552.5, y: 207.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1910014302}
@@ -1828,7 +1828,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1910014301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -578.5, y: 285.5, z: 0}
+  m_LocalPosition: {x: -542.5, y: 197.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1785164668}
@@ -2057,7 +2057,7 @@ Rigidbody:
   m_GameObject: {fileID: 1951723186}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 20
+  m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2076,7 +2076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTransform: {fileID: 760828022}
-  speed: 80
+  speed: 4
   materials:
   - {fileID: 2100000, guid: a6ea3841e275dd74c926efbf8b34d6f8, type: 2}
   - {fileID: 2100000, guid: 5c01c6f3a52291e41ae8ef0b2a1f8ab0, type: 2}
