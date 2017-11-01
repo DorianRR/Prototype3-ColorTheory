@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: a459fdb2950900e45a9d62907c556ac4
-timeCreated: 1509568601
+guid: ccf2f45b7e6d4f7449f0bd1197e3f4f4
+timeCreated: 1509571872
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: polySurface2590
     400000: //RootNode
-    400002: polySurface2590
-    2300000: polySurface2590
-    3300000: polySurface2590
-    4300000: polySurface2590
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pPlane21
     9500000: //RootNode
   materials:
     importMaterials: 1
