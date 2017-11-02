@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 public class PlayerController : MonoBehaviour {
-    enum color { white, blue, red, yellow, orange, purple, green, brown};
+    enum color { white, blue, red, yellow, orange, purple, green, brown, yellow_orange, red_orange, red_purple, blue_purple, blue_green, yellow_green };
     public float speed;
     public Material[] materials;
     public Text output;
@@ -74,6 +74,63 @@ public class PlayerController : MonoBehaviour {
             onGround = true;
         }
     }
+    private void colorPick()
+    {
+        if (colorCollected["blue"] != 0 && colorCollected["red"] == 0 && colorCollected["yellow"] == 0)
+        {
+            rend.sharedMaterial = materials[(int)color.blue];
+        }
+        else if (colorCollected["blue"] == 0 && colorCollected["red"] != 0 && colorCollected["yellow"] == 0)
+        {
+            rend.sharedMaterial = materials[(int)color.red];
+        }
+        else if (colorCollected["blue"] == 0 && colorCollected["red"] == 0 && colorCollected["yellow"] != 0)
+        {
+            rend.sharedMaterial = materials[(int)color.yellow];
+        }
+        else if (colorCollected["blue"] == 1 && colorCollected["red"] == 1 && colorCollected["yellow"] == 0)
+        {
+            rend.sharedMaterial = materials[(int)color.purple];
+        }
+        else if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
+        {
+            rend.sharedMaterial = materials[(int)color.green];
+        }
+        else if (colorCollected["blue"] == 0 && colorCollected["red"] == 1 && colorCollected["yellow"] == 1)
+        {
+            rend.sharedMaterial = materials[(int)color.orange];
+        }
+
+
+        else if (colorCollected["blue"] == 0 && colorCollected["red"] == 1 && colorCollected["yellow"] == 2)
+        {
+            rend.sharedMaterial = materials[(int)color.yellow_orange];
+        }
+        else if (colorCollected["blue"] == 0 && colorCollected["red"] == 2 && colorCollected["yellow"] == 1)
+        {
+            rend.sharedMaterial = materials[(int)color.red_orange];
+        }
+        else if (colorCollected["blue"] == 1 && colorCollected["red"] == 2 && colorCollected["yellow"] == 0)
+        {
+            rend.sharedMaterial = materials[(int)color.red_purple];
+        }
+        else if (colorCollected["blue"] == 2 && colorCollected["red"] == 1 && colorCollected["yellow"] == 0)
+        {
+            rend.sharedMaterial = materials[(int)color.blue_purple];
+        }
+        else if (colorCollected["blue"] == 2 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
+        {
+            rend.sharedMaterial = materials[(int)color.blue_green];
+        }
+        else if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 2)
+        {
+            rend.sharedMaterial = materials[(int)color.yellow_green];
+        }
+        else
+        {
+            rend.sharedMaterial = materials[(int)color.brown];
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -81,7 +138,7 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.CompareTag("White Pool"))
         {
             rend.sharedMaterial = materials[0];
-            for (int i = 0; i < 3; i++ )
+            for (int i = 0; i < 6; i++)
             {
                 ColorPool[i].SetActive(true);
             }
@@ -93,84 +150,35 @@ public class PlayerController : MonoBehaviour {
         else if (other.gameObject.CompareTag("Blue Pool"))
         {
             colorCollected["blue"]++;
-            if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 0){
-                rend.sharedMaterial = materials[(int)color.blue];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 1 && colorCollected["yellow"] == 0)
-            {
-                rend.sharedMaterial = materials[(int)color.purple];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.green];
-            }
-            else if (colorCollected["blue"] == 0 && colorCollected["red"] == 1 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.orange];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 1 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.brown];
-            }
-
+            colorPick();
             other.gameObject.SetActive(false);
-           
+
         }
         else if (other.gameObject.CompareTag("Red Pool"))
         {
             colorCollected["red"]++;
-            if (colorCollected["blue"] == 0 && colorCollected["red"] == 1 && colorCollected["yellow"] == 0)
-            {
-                rend.sharedMaterial = materials[(int)color.red];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 1 && colorCollected["yellow"] == 0)
-            {
-                rend.sharedMaterial = materials[(int)color.purple];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.green];
-            }
-            else if (colorCollected["blue"] == 0 && colorCollected["red"] == 1 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.orange];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 1 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.brown];
-            }
+            colorPick();
             other.gameObject.SetActive(false);
-            
+
         }
         else if (other.gameObject.CompareTag("Yellow Pool"))
         {
             colorCollected["yellow"]++;
-            if (colorCollected["blue"] == 0 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.yellow];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 1 && colorCollected["yellow"] == 0)
-            {
-                rend.sharedMaterial = materials[(int)color.purple];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.green];
-            }
-            else if (colorCollected["blue"] == 0 && colorCollected["red"] == 1 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.orange];
-            }
-            else if (colorCollected["blue"] == 1 && colorCollected["red"] == 1 && colorCollected["yellow"] == 1)
-            {
-                rend.sharedMaterial = materials[(int)color.brown];
-            }
+            colorPick();
             other.gameObject.SetActive(false);
         }
         else if (other.gameObject.CompareTag("Gate Trigger"))
         {
+            if (colorCollected["blue"] == 1 && colorCollected["red"] == 2 && colorCollected["yellow"] == 0)
+            {
                 //rend.sharedMaterial = materials[(int)color.green];
-            doorController.doorOpening = true;         
+                doorController.doorOpening = true;
+                output.text = "Win";
+            }
+            else
+            {
+                output.text = "lose";
+            }
         }
     }
 

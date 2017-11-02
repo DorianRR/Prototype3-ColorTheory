@@ -10,6 +10,10 @@ Shader "Custom/RippleWater" {
 		//_AO ("AO", 2D) = "ao" {}
 		//Plugin box for normal texture.
 		_BumpMap ("Normal", 2D) = "bump" {}
+		//Add transperancey.
+		_Transparency("Transparency", Range(0.0,0.5)) = 0.25
+		//Cutout threshold
+		_CutoutThresh("Cutout Threshold", Range(0.0,1.0)) = 0.2
 		//Material Gloss slider.
 		_Glossiness ("Gloss", Range(0,1)) = 0.5
 		//Material Metal slider.
