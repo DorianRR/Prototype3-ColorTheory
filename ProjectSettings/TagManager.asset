@@ -15,6 +15,9 @@ TagManager:
   - Gate Trigger
   - Wall
   - Floor
+  - Gate Trigger1
+  - Gate Trigger2
+  - Gate Trigger3
   layers:
   - Default
   - TransparentFX

@@ -13,8 +13,13 @@ public class PlayerController : MonoBehaviour {
    
     public GameObject[] ColorPool;
     public GameObject doors;
+    public GameObject doors2;
+    public GameObject doors3;
 
     private DoorController doorController;
+    private DoorController2 doorController2;
+    private DoorController3 doorController3;
+
     private Rigidbody rb;
     public Renderer rend;
     private Dictionary<string, int> colorCollected = new Dictionary<string, int>();
@@ -34,6 +39,10 @@ public class PlayerController : MonoBehaviour {
         colorCollected.Add("red", 0);
         colorCollected.Add("yellow", 0);
         doorController = doors.GetComponent<DoorController>();
+        doorController2 = doors2.GetComponent<DoorController2>();
+        doorController3 = doors3.GetComponent<DoorController3>();
+
+
         onGround = true;
     }
 
@@ -167,18 +176,26 @@ public class PlayerController : MonoBehaviour {
             colorPick();
             other.gameObject.SetActive(false);
         }
-        else if (other.gameObject.CompareTag("Gate Trigger"))
+        else if (other.gameObject.CompareTag("Gate Trigger1"))
         {
-            if (colorCollected["blue"] == 1 && colorCollected["red"] == 2 && colorCollected["yellow"] == 0)
-            {
-                //rend.sharedMaterial = materials[(int)color.green];
-                doorController.doorOpening = true;
-                output.text = "Win";
-            }
-            else
-            {
-                output.text = "lose";
-            }
+            
+             //rend.sharedMaterial = materials[(int)color.green];
+             doorController.doorOpening = true;
+         
+        }
+        else if (other.gameObject.CompareTag("Gate Trigger2"))
+        {
+
+            //rend.sharedMaterial = materials[(int)color.green];
+            doorController2.doorOpening = true;
+
+        }
+        else if (other.gameObject.CompareTag("Gate Trigger3"))
+        {
+
+            //rend.sharedMaterial = materials[(int)color.green];
+            doorController3.doorOpening = true;
+
         }
     }
 

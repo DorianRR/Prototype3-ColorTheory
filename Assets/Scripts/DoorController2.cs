@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class DoorController2 : MonoBehaviour
 {
     public bool doorOpening;
     public GameObject leftDoor;
@@ -23,7 +23,7 @@ public class DoorController : MonoBehaviour
 
         if (doorOpening == true)
         {
-            Vector3 offset = new Vector3(0, 0, speed * Time.deltaTime);
+            Vector3 offset = new Vector3(speed * Time.deltaTime, 0, 0);
 
             if (leftDoor.transform.position.x <= -2.4 && false)
             {

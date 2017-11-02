@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class DoorController3 : MonoBehaviour
 {
     public bool doorOpening;
     public GameObject leftDoor;
