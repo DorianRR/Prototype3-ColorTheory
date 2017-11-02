@@ -169,16 +169,8 @@ public class PlayerController : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("Gate Trigger"))
         {
-            if (colorCollected["blue"] == 1 && colorCollected["red"] == 0 && colorCollected["yellow"] == 1)
-            {
                 //rend.sharedMaterial = materials[(int)color.green];
-                doorController.doorOpening = true;
-                output.text = "Win";
-            }
-            else
-            {
-                output.text = "lose";
-            }
+            doorController.doorOpening = true;         
         }
     }
 

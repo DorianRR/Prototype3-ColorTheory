@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour {
     public bool doorOpening;
-    public GameObject westDoor;
-    public GameObject eastDoor;
+    public GameObject leftDoor;
+    public GameObject rightDoor;
 
     private float speed;
     void Start()
@@ -23,14 +23,14 @@ public class DoorController : MonoBehaviour {
         {
             Vector3 offset = new Vector3(speed * Time.deltaTime, 0, 0);
 
-            if(westDoor.transform.position.x <= -2.4)
+            if(leftDoor.transform.position.x <= -2.4)
             {
                 doorOpening = false;
             }
             else
             {
-                westDoor.transform.position = westDoor.transform.position - offset;
-                eastDoor.transform.position = eastDoor.transform.position + offset;
+                leftDoor.transform.position = leftDoor.transform.position - offset;
+                rightDoor.transform.position = rightDoor.transform.position + offset;
             }
             //westDoor.transform.position = new Vector3(-2.3f, 0.67f, 9.8f);
             
@@ -39,4 +39,6 @@ public class DoorController : MonoBehaviour {
         }
         
 	}
+
+   
 }
