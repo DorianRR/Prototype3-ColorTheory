@@ -17,22 +17,22 @@ Platform assembly: C:\Users\u0825896\Desktop\Prototype3\Prototype3-ColorTheory\B
 Loading C:\Users\u0825896\Desktop\Prototype3\Prototype3-ColorTheory\Build1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\u0825896\Desktop\Prototype3\Prototype3-ColorTheory\Build1_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\u0825896\Desktop\Prototype3\Prototype3-ColorTheory\Build1_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.099 seconds
+- Completed reload, in  0.031 seconds
 Platform assembly: C:\Users\u0825896\Desktop\Prototype3\Prototype3-ColorTheory\Build1_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\u0825896\Desktop\Prototype3\Prototype3-ColorTheory\Build1_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.025447 ms
+UnloadTime: 0.978202 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 5984 -> priority: 1 
-  Thread -> id: 1cfc -> priority: 1 
-  Thread -> id: 3464 -> priority: 1 
-  Thread -> id: 2d70 -> priority: 1 
+  Thread -> id: 93a8 -> priority: 1 
+  Thread -> id: 9064 -> priority: 1 
+  Thread -> id: 9294 -> priority: 1 
+  Thread -> id: 9358 -> priority: 1 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.003316 ms
+UnloadTime: 4.859990 ms
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 4765.
-Total: 0.462205 ms (FindLiveObjects: 0.218580 ms CreateObjectMapping: 0.018215 ms MarkObjects: 0.213172 ms  DeleteObjects: 0.011953 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 26868.
+Total: 1.903752 ms (FindLiveObjects: 1.207882 ms CreateObjectMapping: 0.059483 ms MarkObjects: 0.614756 ms  DeleteObjects: 0.020776 ms)
 
