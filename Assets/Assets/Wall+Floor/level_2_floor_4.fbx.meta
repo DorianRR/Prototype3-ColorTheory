@@ -1,27 +1,26 @@
 fileFormatVersion: 2
-guid: 907a7b428b33ce140872201547630b1b
-timeCreated: 1509498205
-licenseType: Free
+guid: 1470025a3b034d14081e5880b5635f72
+timeCreated: 1509581849
+licenseType: Pro
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: polySurface1800
+    100004: polySurface2566
+    100006: polySurface2567
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pSphere1
+    400002: polySurface1800
+    400004: polySurface2566
+    400006: polySurface2567
+    2300000: polySurface2567
+    3300000: polySurface2567
+    4300000: polySurface2567
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 3bbe6abc02c53a5438cf249fe71e18ab, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -34,7 +33,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

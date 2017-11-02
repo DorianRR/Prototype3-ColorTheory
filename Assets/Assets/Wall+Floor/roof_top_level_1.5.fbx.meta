@@ -1,27 +1,55 @@
 fileFormatVersion: 2
-guid: 907a7b428b33ce140872201547630b1b
-timeCreated: 1509498205
-licenseType: Free
+guid: 56a11b1394ac572409f0a9c46422fc00
+timeCreated: 1509577778
+licenseType: Pro
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pSphere1
+    100000: pCube235
+    100002: pCube236
+    100004: pCube237
+    100006: pCube238
+    100008: pCube239
+    100010: pCube240
+    100012: pCube241
+    100014: polySurface2566
+    100016: polySurface2567
+    100018: //RootNode
+    100020: transform1148
+    100022: transform1149
+    100024: transform1150
+    100026: transform1151
+    100028: transform1152
+    100030: transform1153
+    100032: transform1154
+    400000: pCube235
+    400002: pCube236
+    400004: pCube237
+    400006: pCube238
+    400008: pCube239
+    400010: pCube240
+    400012: pCube241
+    400014: polySurface2566
+    400016: polySurface2567
+    400018: //RootNode
+    400020: transform1148
+    400022: transform1149
+    400024: transform1150
+    400026: transform1151
+    400028: transform1152
+    400030: transform1153
+    400032: transform1154
+    2300000: polySurface2566
+    2300002: polySurface2567
+    3300000: polySurface2566
+    3300002: polySurface2567
+    4300000: polySurface2566
+    4300002: polySurface2567
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 3bbe6abc02c53a5438cf249fe71e18ab, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -34,7 +62,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

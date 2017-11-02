@@ -1,27 +1,58 @@
 fileFormatVersion: 2
-guid: 907a7b428b33ce140872201547630b1b
-timeCreated: 1509498205
-licenseType: Free
+guid: eddcf31059c9f0946a0513aea9389136
+timeCreated: 1509579461
+licenseType: Pro
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pSphere1
+    100000: group
+    100002: pasted__pCube249
+    100004: pasted__polySurface2572
+    100006: pasted__polySurface2573
+    100008: pCube247
+    100010: pCube248
+    100012: pCube249
+    100014: polySurface2570
+    100016: polySurface2571
+    100018: polySurface2571 1
+    100020: polySurface2572
+    100022: //RootNode
+    100024: transform1157
+    100026: transform1158
+    100028: transform1159
+    100030: transform1160
+    100032: transform1161
+    100034: transform1162
+    100036: transform1163
+    100038: transform1164
+    400000: group
+    400002: pasted__pCube249
+    400004: pasted__polySurface2572
+    400006: pasted__polySurface2573
+    400008: pCube247
+    400010: pCube248
+    400012: pCube249
+    400014: polySurface2570
+    400016: polySurface2571
+    400018: polySurface2571 1
+    400020: polySurface2572
+    400022: //RootNode
+    400024: transform1157
+    400026: transform1158
+    400028: transform1159
+    400030: transform1160
+    400032: transform1161
+    400034: transform1162
+    400036: transform1163
+    400038: transform1164
+    2300000: polySurface2571
+    3300000: polySurface2571
+    4300000: polySurface2571
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 3bbe6abc02c53a5438cf249fe71e18ab, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -34,7 +65,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
