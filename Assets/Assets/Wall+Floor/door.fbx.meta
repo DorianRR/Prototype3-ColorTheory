@@ -1,27 +1,40 @@
 fileFormatVersion: 2
-guid: 907a7b428b33ce140872201547630b1b
-timeCreated: 1509498205
-licenseType: Free
+guid: a57192924de17bd4c96fab67e7b82795
+timeCreated: 1509578638
+licenseType: Pro
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCube242
+    100004: pCube243
+    100006: pCube244
+    100008: pCube245
+    100010: pCube246
+    100012: transform1155
+    100014: transform1156
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pSphere1
+    400002: pCube242
+    400004: pCube243
+    400006: pCube244
+    400008: pCube245
+    400010: pCube246
+    400012: transform1155
+    400014: transform1156
+    2300000: pCube244
+    2300002: pCube245
+    2300004: pCube246
+    3300000: pCube244
+    3300002: pCube245
+    3300004: pCube246
+    4300000: pCube244
+    4300002: pCube245
+    4300004: pCube246
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 3bbe6abc02c53a5438cf249fe71e18ab, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -34,7 +47,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
