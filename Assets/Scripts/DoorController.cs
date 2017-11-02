@@ -21,9 +21,9 @@ public class DoorController : MonoBehaviour {
         
         if(doorOpening == true)
         {
-            Vector3 offset = new Vector3(speed * Time.deltaTime, 0, 0);
+            Vector3 offset = new Vector3(0, 0, speed * Time.deltaTime);
 
-            if(leftDoor.transform.position.x <= -2.4)
+            if(leftDoor.transform.position.x <= -2.4 && false)
             {
                 doorOpening = false;
             }
