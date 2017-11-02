@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour {
    
     public GameObject[] ColorPool;
     public GameObject doors;
-    public AudioSource jump;
 
     private DoorController doorController;
     private Rigidbody rb;
@@ -51,7 +50,6 @@ public class PlayerController : MonoBehaviour {
         {
             onGround = false;
             moveUp += jumpScale;
-            jump.Play();
         }
         else
         {

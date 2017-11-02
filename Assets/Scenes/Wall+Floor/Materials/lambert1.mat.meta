@@ -1,9 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d109f0ed24fcec44599fd1d59bc8b85f
 timeCreated: 1509587713
 licenseType: Pro
 NativeFormatImporter:
   mainObjectFileID: -1
+=======
+<<<<<<< HEAD
+guid: e8ef52aeaecaab94e8cdf606cb474036
+timeCreated: 1509572829
+=======
+guid: d109f0ed24fcec44599fd1d59bc8b85f
+timeCreated: 1509572665
+>>>>>>> f16aad3acea9948f72058bb6fb30b35da268b323
+licenseType: Pro
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+>>>>>>> parent of 0a7bd99... Music
   userData: 
   assetBundleName: 
   assetBundleVariant: 

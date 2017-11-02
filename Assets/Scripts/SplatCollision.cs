@@ -42,6 +42,8 @@ public class SplatCollision : MonoBehaviour
 
         //Query color of player's material.
         PlayerColor = GameObject.Find("Player").GetComponent<Renderer>().material.GetColor("_Color");
+
+
         if (collision.gameObject.tag == "Wall")
         {
             ContactPoint contact = collision.contacts[0];
