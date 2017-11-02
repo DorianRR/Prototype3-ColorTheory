@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour {
     public Renderer rend;
     private Dictionary<string, int> colorCollected = new Dictionary<string, int>();
     public bool isWhite = true;
+    public Transform camTransform;
+    public float ballDiameter;
+    public float jumpScale;
+    private bool onGround;
+
     void Start()
     {
         output.text = "";
@@ -29,6 +34,7 @@ public class PlayerController : MonoBehaviour {
         colorCollected.Add("red", 0);
         colorCollected.Add("yellow", 0);
         doorController = doors.GetComponent<DoorController>();
+        onGround = true;
     }
 
     void FixedUpdate()
@@ -39,9 +45,11 @@ public class PlayerController : MonoBehaviour {
         float moveHoriz = Input.GetAxis("Horizontal");
         float moveVert = Input.GetAxis("Vertical");
         float moveUp = 0;
-        if (Input.GetButton("Jump"))
+
+        if (Input.GetButton("Jump") && onGround)
         {
-            moveUp = 30;
+            onGround = false;
+            moveUp += jumpScale;
         }
         else
         {
@@ -49,13 +57,24 @@ public class PlayerController : MonoBehaviour {
         }
 
         Vector3 movement = new Vector3(moveHoriz, moveUp, moveVert);
-        if (this.transform.position.y < 0.51)
-        {
-            //rb.transform.position = currentPo + movement*speed;
-            rb.AddForce(movement * speed);
+        Quaternion rot = Quaternion.Euler(0, camTransform.rotation.eulerAngles.y, 0);
+        movement = rot * movement;
+        rb.AddForce(movement * speed);
+        /*
+        if (this.transform.position.y < ballDiameter/ 2){
+            onGround = true;
         }
+        */
         movement = new Vector3(0,0,0);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Floor")
+        {
+            onGround = true;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         isWhite = false;
